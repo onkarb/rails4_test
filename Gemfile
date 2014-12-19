@@ -41,8 +41,15 @@ gem 'spring',        group: :development
 #gems that I included
 gem 'mysql2'
 
+gem 'sunspot_rails'
+gem 'notch8_sunspot_autocomplete', '~> 2.0.1'
+
+gem 'jquery-ui-rails'
+
 group :development do
 	gem 'pry-rails'
+  gem 'sunspot_solr'
+
 end
 
 

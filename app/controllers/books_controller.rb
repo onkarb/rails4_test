@@ -5,6 +5,11 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all unless @books.present?
+
+    respond_to do |format|
+      format.html
+      format.js {}
+    end
   end
 
   # GET /books/1
@@ -15,6 +20,11 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+
+    respond_to do |format|
+      format.js {}
+
+    end
   end
 
   # GET /books/1/edit
@@ -30,9 +40,11 @@ class BooksController < ApplicationController
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
+        format.js {}
       else
         format.html { render :new }
         format.json { render json: @book.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
@@ -69,6 +81,7 @@ class BooksController < ApplicationController
     respond_to do |format|
       format.html { render :action => "index" }
       format.xml  { render :xml => @books }
+      format.js {}
     end
   end
 

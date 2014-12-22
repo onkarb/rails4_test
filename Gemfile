@@ -44,7 +44,7 @@ gem 'mysql2'
 gem 'sunspot_rails'
 gem 'notch8_sunspot_autocomplete', '~> 2.0.1'
 
-gem 'jquery-ui-rails'
+# gem 'jquery-ui-rails'
 
 group :development do
 	gem 'pry-rails'

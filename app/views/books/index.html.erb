@@ -1,0 +1,20 @@
+<h1>Search</h1>
+<%= form_tag search_books_path, :method => :get, :remote => :true do %>
+<p>
+  <%= text_field_tag :query, params[:query], :onkeyup => "myFunction()" %>
+</p>
+<% end %>
+
+
+<h1>Listing books</h1>
+
+<div id="books_table_data">
+  <%= render partial: "books", locals:{ books: @books} %>
+</div>
+<br>
+
+<div id="book_form">
+</div>
+
+<%= link_to 'New Book', new_book_path, :remote => :true %>
+

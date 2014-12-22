@@ -1,0 +1,7 @@
+<% if @book.errors.any? %>
+  $('#book_form').html("<%= j (render "form", locals: { @book => @book}) %>");
+<% else %>
+  $('#books_table_data table > tbody').append("<%= j (render partial: "book", locals: { :book => @book}) %>");
+  <% @book =Book.new %>
+  $('#book_form').html("<%= j (render "form", locals: { @book => @book}) %>");
+<%end%>
